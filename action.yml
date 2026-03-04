@@ -10,7 +10,6 @@ inputs:
 outputs:
   PLAIN_TEXT:
     description: 'We provide PLAIN_TEXT version of the results'
-    required: false
 
 runs:
   using: 'docker'
