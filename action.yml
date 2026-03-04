@@ -1,5 +1,6 @@
 name: 'Generate Acknowledgements from used Swift Packages'
-description: 'Collate all LICENSE files from used Swift Packages and write a Acknowledgement.plist'
+description: 'Collate all LICENSE files from used Swift Packages and write an Acknowledgement.plist'
+
 inputs:
   SPM_CHECKOUT_DIR:
     description: 'Location of the SPM Checkout directory'
@@ -7,13 +8,15 @@ inputs:
   FILE_NAME:
     description: 'The filename/path where we write the Acknowledgement.plist'
     required: true
+
 outputs:
   PLAIN_TEXT:
     description: 'We provide PLAIN_TEXT version of the results'
 
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: 'node20'
+  main: 'dist/index.js'
+
 branding:
   icon: 'mic'
   color: 'blue'
