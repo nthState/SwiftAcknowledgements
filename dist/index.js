@@ -27662,8 +27662,13 @@ async function run() {
     // Output (replacement for deprecated ::set-output used in python) :contentReference[oaicite:5]{index=5}
     core.setOutput("PLAIN_TEXT", template);
 
-    fs.mkdirSync(path.dirname(FILE_NAME), { recursive: true });
-    fs.writeFileSync(FILE_NAME, template, "utf8");
+    const outputDir = path.dirname(FILE_NAME);
+
+	// Create intermediate directories if needed
+	fs.mkdirSync(outputDir, { recursive: true });
+	
+	// Write plist
+	fs.writeFileSync(FILE_NAME, template, "utf8");
   } catch (err) {
     core.setFailed(err instanceof Error ? err.message : String(err));
   }
