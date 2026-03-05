@@ -27618,7 +27618,7 @@ async function run() {
     const FILE_NAME = core.getInput("FILE_NAME", { required: true });
 
     if (!fs.existsSync(SPM_CHECKOUT_DIR)) {
-      core.setFailed("Swift Package Folder doesnt exist");
+      core.setFailed("Swift Package Folder doesnt exist: ${SPM_CHECKOUT_DIR}");
       return;
     }
 
