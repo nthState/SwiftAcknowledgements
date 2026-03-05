@@ -47,30 +47,9 @@ If you want to generate the text as plain text, use this option
 
 ## Testing
 
-### Docker
+### Build and Run
 
-Build the docker
-
-```bash
-docker build . -t githubactiontest -f Dockerfile
 ```
-
-Run the docker
-
-```bash
-docker run \
--e SPM_CHECKOUT_DIR=path to checkout dir \
--e FILE=Acknowledgements.plist \
--d githubactiontest
-```
-
-### Running main.py directly
-
-*Note*: Your path may differ
-
-```bash
-export SPM_CHECKOUT_DIR="/Users/chrisdavis/Library/Developer/Xcode/DerivedData/App-gktkfhtswsmjzdhkguhoaotlhihx/SourcePackages/checkouts"
-export FILE_NAME="~/Acknowledgements.plist"
-python3 main.py
-
+npm i
+npm run build
 ```
